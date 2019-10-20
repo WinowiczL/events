@@ -4,6 +4,10 @@ import {Component} from '@angular/core';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styles: [`
+      li > a.active {
+          color: #F97924
+      }
+
       .nav.navbar-nav {
           font-size: 15px;
       }
