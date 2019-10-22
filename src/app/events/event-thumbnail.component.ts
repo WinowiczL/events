@@ -1,9 +1,10 @@
 import {Component, Input} from '@angular/core';
+import {IEvent} from './shared/event.model';
 
 @Component({
   selector: 'app-event-thumbnail',
   template: `
-      <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
+      <div [routerLink]="['/events',  event.id]" class="well hoverwell thumbnail">
           <h2>{{event?.name}}</h2>
           <div>Date: {{event?.date}}</div>
           <div>Time: {{event?.time}}</div>
@@ -39,7 +40,7 @@ import {Component, Input} from '@angular/core';
 export class EventThumbnailComponent {
 
   @Input()
-  event: any;
+  event: IEvent;
 
   getStartTimeStyle() {
     const isEarlyStart = this.event && this.event.time === '8:00 am';

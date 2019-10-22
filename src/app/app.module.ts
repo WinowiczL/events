@@ -13,6 +13,7 @@ import {appRoutes} from '../routes';
 import {CreateEventComponent} from './events/create-event.component';
 import {Error404Component} from './errors/404.component';
 import {EventListResolverService} from './events/event-list-resolver.service';
+import {AuthService} from './user/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,9 @@ import {EventListResolverService} from './events/event-list-resolver.service';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [EventService, ToastrService, EventListResolverService,{
+  providers: [EventService, ToastrService, EventListResolverService, {
     provide: 'canDeactivateCreateEvent', useValue: checkDirtyState,
-  }],
+  }, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {
